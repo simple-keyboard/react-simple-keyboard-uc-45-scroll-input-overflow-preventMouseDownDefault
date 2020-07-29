@@ -11,7 +11,7 @@ class App extends Component {
   };
 
   onChange = input => {
-    let caretPosition = this.keyboardRef.keyboard.caretPosition;
+    let caretPosition = this.keyboard.caretPosition;
 
     this.setState(
       {
@@ -62,7 +62,7 @@ class App extends Component {
         input: input
       },
       () => {
-        this.keyboardRef.keyboard.setInput(input);
+        this.keyboard.setInput(input);
       }
     );
   };
@@ -77,7 +77,7 @@ class App extends Component {
           onChange={e => this.onChangeInput(e)}
         />
         <Keyboard
-          ref={r => (this.keyboardRef = r)}
+          KeyboardRef={r => (this = r)}
           layoutName={this.state.layoutName}
           onChange={input => this.onChange(input)}
           onKeyPress={button => this.onKeyPress(button)}
