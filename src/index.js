@@ -77,7 +77,7 @@ class App extends Component {
           onChange={e => this.onChangeInput(e)}
         />
         <Keyboard
-          KeyboardRef={r => (this = r)}
+          KeyboardRef={r => (this.keyboard = r)}
           layoutName={this.state.layoutName}
           onChange={input => this.onChange(input)}
           onKeyPress={button => this.onKeyPress(button)}
